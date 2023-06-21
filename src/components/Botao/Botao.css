@@ -1,0 +1,25 @@
+.botao {
+    background-color: #6278f7;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    color: #FFF;
+    margin: 2px 0;
+    width: 100%;
+}
+
+.botao:hover {
+    font-weight: bolder;
+    background-color: #5139eb;
+}
+
+@media (max-width: 600px) {
+    .botao {
+        margin: 10% 0;
+        /* Define um tamanho máximo de 3% da largura da viewport */
+    }
+
+}
