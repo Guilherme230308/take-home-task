@@ -7,10 +7,19 @@
   pointer-events: none;
 }
 
+.banner-container {
+  background-color: #6278f7;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+
+  .banner-container {
+    background-color: #6278f7;
+  }
+
 }
 
 .App-header {
@@ -32,6 +41,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

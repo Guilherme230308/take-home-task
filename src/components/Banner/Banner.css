@@ -1,8 +1,7 @@
-.banner {
+.banner-desktop {
     background-color: #6278f7;
-    text-align: center;
 }
 
-.banner img {
+.banner-mobile {
     max-width: 100%;
 }

@@ -3,9 +3,12 @@ import './Banner.css';
 
 const Banner: React.FC = () => {
     return (
-        <header className='banner'>
-            <img src="/images/banner.png" alt="Banner fixo da aplicação" />
-        </header>
+<header className="banner">
+  <img src="/images/banner_desktop.png" alt="Banner fixo da aplicação" className="banner-desktop d-none d-md-block" />
+  <img src="/images/banner_mobile.png" alt="Banner fixo da aplicação" className="banner-mobile d-block d-md-none" />
+</header>
+
+
     );
 }
 

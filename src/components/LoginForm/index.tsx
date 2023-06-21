@@ -45,7 +45,7 @@ const LoginForm = () => {
       openModal();
     } else {
       // Redirect to dashboard
-      navigate('/dashboard');
+      navigate('/pieDashboard');
     }
 
     // Reset form fields
