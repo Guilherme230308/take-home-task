@@ -1,41 +1,77 @@
-import './Dashboard.css';
+import React from 'react';
+import Table from './table';
+import Chart from './chart';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, ArcElement, Tooltip, Legend } from 'chart.js';
 
-const Dashboard = () => {
 
+ChartJS.register(
+  BarElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  ArcElement
+)
+
+const DataPage: React.FC = () => {
+  const tableData = React.useMemo(
+    () => [
+      { name: 'João', age: 25 },
+      { name: 'Maria', age: 30 },
+      { name: 'Pedro', age: 35 },
+    ],
+    []
+  );
+
+  const tableColumns = React.useMemo(
+    () => [
+      { Header: 'Name', accessor: 'name' },
+      { Header: 'Age', accessor: 'age' },
+    ],
+    []
+  );
+
+  const barChartData = React.useMemo(
+    () => ({
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [
+        {
+          label: 'Sales',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: 'rgba(75, 192, 192, 0.6)',
+        },
+      ],
+    }),
+    []
+  );
+
+  const pieChartData = React.useMemo(
+    () => ({
+      labels: ['Red', 'Blue', 'Yellow'],
+      datasets: [
+        {
+          label: 'Pie Chart Example',
+          data: [10, 20, 30],
+          backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.6)'],
+        },
+      ],
+    }),
+    []
+  );
+  
 
   return (
-    <section className='formulario'>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <a className="navbar-brand" href="#">Navbar</a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-  <div className="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul className="navbar-nav">
-      <li className="nav-item active">
-        <a className="nav-link" href="#">Home <span className="sr-only">(Página atual)</span></a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Destaques</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">Preços</a>
-      </li>
-      <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Link dropdown
-        </a>
-        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a className="dropdown-item" href="#">Ação</a>
-          <a className="dropdown-item" href="#">Outra ação</a>
-          <a className="dropdown-item" href="#">Algo mais aqui</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
-    </section>
+    <div>
+      <h1>Bar Table Example</h1>
+      <Table data={tableData} columns={tableColumns} />
+      <h1>Chart Example</h1>
+      <Chart data={barChartData} />
+      <h1>Table Example</h1>
+      <Table data={tableData} columns={tableColumns} />
+      <h1>Pie Chart Example</h1>
+      <Chart data={pieChartData} />
+    </div>
   );
-}
+};
 
-export default Dashboard;
+export default DataPage;
