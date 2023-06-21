@@ -69,7 +69,7 @@ const LoginForm = () => {
        label="Password"
           valor={password}
           placeholder="Insert your password"
-          onChange={handlePasswordChange}
+          onChange={handlePasswordChange} 
         />
         <Botao>
           Login
