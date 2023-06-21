@@ -1,8 +1,4 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
-import CampoTexto from '../CampoTexto';
-import Botao from '../Botao';
 
 const Dashboard = () => {
 
