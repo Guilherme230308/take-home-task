@@ -63,10 +63,7 @@ const LoginForm = () => {
           placeholder="Insert your username"
           onChange={handleUsernameChange}
         />
-        <CampoTexto
-
-        teste commit
-       
+        <CampoTexto    
        
        label="Password"
           valor={password}
