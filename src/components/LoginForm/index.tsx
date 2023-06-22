@@ -45,14 +45,11 @@ const LoginForm = () => {
       setErrorMessageText('Incorrect username or password.');
       openModal();
     } else {
-      // Dispatch the login action
       dispatch(login());
 
-      // Redirect to dashboard
       navigate('/pieDashboard');
     }
 
-    // Reset form fields
     setUsername('');
     setPassword('');
   };
