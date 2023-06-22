@@ -1,13 +1,13 @@
-import Banner from './components/Banner'
-import LoginForm from './components/LoginForm';
+import Banner from '../components/Banner'
+import PieChartBoard from '../components/Dashboard'
 
-function Login() {
+function PieDashboard() {
 
     return (
         <div className="App">
             <div className="row">
                 <div className="col-md-6 order-2 order-lg-1">
-                    <LoginForm />
+                    <PieChartBoard />
                 </div>
                 <div className="banner-container col-md-6 order-1 order-lg-2">
                     <Banner />
@@ -17,4 +17,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default PieDashboard;

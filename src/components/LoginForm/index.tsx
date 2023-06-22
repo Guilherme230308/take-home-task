@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import './LoginForm.css';
-import CampoTexto from '../CampoTexto';
-import Botao from '../Botao';
 import ErrorMessage from '../ErrorMessage';
+import { login } from '../../loginActions';
+import TextInput from '../TextInput';
+import Button from '../Button';
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [errorMessageText, setErrorMessageText] = useState('');
 
   const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
@@ -27,9 +31,6 @@ const LoginForm = () => {
     setShowModal(false);
   };
 
-
-  const [errorMessageText, setErrorMessageText] = useState('');
-
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
@@ -44,6 +45,9 @@ const LoginForm = () => {
       setErrorMessageText('Incorrect username or password.');
       openModal();
     } else {
+      // Dispatch the login action
+      dispatch(login());
+
       // Redirect to dashboard
       navigate('/pieDashboard');
     }
@@ -57,28 +61,29 @@ const LoginForm = () => {
     <section className='loginForm'>
       <form onSubmit={handleSubmit}>
         <h2 className='title'>Insert your credentials to access</h2>
-        <CampoTexto
+        <TextInput
           label="Username"
-          valor={username}
+          value={username}
           placeholder="Insert your username"
           onChange={handleUsernameChange}
+          isPassword={false}
         />
-        <CampoTexto    
-       
-       label="Password"
-          valor={password}
+        <TextInput
+          label="Password"
+          value={password}
           placeholder="Insert your password"
           onChange={handlePasswordChange}
+          isPassword={true}
         />
-        <Botao>
+        <Button>
           Login
-        </Botao>
+        </Button>
 
         {showModal && <ErrorMessage onClose={closeModal} errorMessageText={errorMessageText} />}
 
       </form>
     </section>
   );
-}
+};
 
 export default LoginForm;

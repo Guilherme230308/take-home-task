@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-// Import your components
-import Login from './login';
-import PieDashboard from './dashboard';
+import Login from './pages/login';
+import PieDashboard from './pages/dashboard';
+
 
 const AppRouter: React.FC = () => {
   return (

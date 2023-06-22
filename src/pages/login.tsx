@@ -1,13 +1,16 @@
-import Banner from './components/Banner'
-import PieChartBoard from './components/Dashboard'
+import Banner from '../components/Banner'
+import LoginForm from '../components/LoginForm';
+import { Provider } from 'react-redux';
+import store from '../store';
 
-function PieDashboard() {
-
+function Login() {
     return (
         <div className="App">
             <div className="row">
                 <div className="col-md-6 order-2 order-lg-1">
-                    <PieChartBoard />
+                    <Provider store={store}>
+                        <LoginForm />
+                    </Provider>
                 </div>
                 <div className="banner-container col-md-6 order-1 order-lg-2">
                     <Banner />
@@ -17,4 +20,4 @@ function PieDashboard() {
     );
 }
 
-export default PieDashboard;
+export default Login;

@@ -1,5 +1,80 @@
-.dashboard form {
-    max-width: 80%;
-    border-radius: 20px;
-    padding: 36px 64px;
+.pie-chart {
+    margin-top: 4% !important;
+    width: 44% !important;
+}
+
+.title {
+    text-align: center;
+    margin: 4% 0 0 0;
+}
+
+.info {
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.input-label {
+    margin: 0 8%;
+    display: block;
+    font-size: 24px;
+}
+
+
+.chart-data {
+    background-color: #FFF;
+    box-shadow: 0 14px 20px rgba(0, 0, 0.06);
+    border-radius: 10px;
+    width: 30%;
+    border: none;
+    font-size: 24px;
+    margin: 1% 0;
+}
+
+.data-container {
+    margin: 16% 0 0 20%;
+}
+
+.button {
+    background-color: #6278f7;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 16px;
+    border: none;
+    cursor: pointer !important;
+    color: #FFF;
+    margin: 4% 0;
+    width: 32%;
+}
+
+.button:hover {
+    font-weight: bolder;
+    background-color: #5139eb;
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 8vw;
+        margin-bottom: 10% 0;
+    }
+
+    .pie-chart {
+        margin-top: 4%;
+        width: 100% !important;
+    }
+
+    .data-container {
+        margin: 4% 12% 0 0%;
+    }
+
+    .button {
+        margin: 10% 0;
+    }
+
 }

@@ -1,4 +1,4 @@
-.botao {
+.button {
     background-color: #6278f7;
     border-radius: 10px;
     font-weight: 700;
@@ -11,15 +11,14 @@
     width: 100%;
 }
 
-.botao:hover {
+.button:hover {
     font-weight: bolder;
     background-color: #5139eb;
 }
 
 @media (max-width: 600px) {
-    .botao {
+    .button {
         margin: 10% 0;
-        /* Define um tamanho máximo de 3% da largura da viewport */
     }
 
 }
