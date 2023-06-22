@@ -1,4 +1,4 @@
-.button {
+.login-button {
     background-color: #6278f7;
     border-radius: 10px;
     font-weight: 700;
@@ -11,13 +11,13 @@
     width: 100%;
 }
 
-.button:hover {
+.login-button:hover {
     font-weight: bolder;
     background-color: #5139eb;
 }
 
 @media (max-width: 600px) {
-    .button {
+    .login-button {
         margin: 10% 0;
     }
 
