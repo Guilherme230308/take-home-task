@@ -1,6 +1,13 @@
+<<<<<<< Updated upstream
 import React from 'react';
 import Table from './table';
 import Chart from './chart';
+=======
+import React, { useState } from 'react';
+import ChartData from './chart';
+import './Dashboard.css';
+
+>>>>>>> Stashed changes
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, ArcElement, Tooltip, Legend } from 'chart.js';
 
 

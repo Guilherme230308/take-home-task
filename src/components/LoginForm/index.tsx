@@ -33,7 +33,7 @@ const LoginForm = () => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    // Validation logic
+    
     if (username.trim() === '') {
       setErrorMessageText('Username cannot be empty.');
       openModal();
@@ -70,9 +70,13 @@ const LoginForm = () => {
           placeholder="Insert your password"
           onChange={handlePasswordChange}
         />
+<<<<<<< Updated upstream
         <Botao>
           Login
         </Botao>
+=======
+        <Button>Login</Button>
+>>>>>>> Stashed changes
 
         {showModal && <ErrorMessage onClose={closeModal} errorMessageText={errorMessageText} />}
 
