@@ -70,13 +70,9 @@ const LoginForm = () => {
           placeholder="Insert your password"
           onChange={handlePasswordChange}
         />
-<<<<<<< Updated upstream
         <Botao>
           Login
         </Botao>
-=======
-        <Button>Login</Button>
->>>>>>> Stashed changes
 
         {showModal && <ErrorMessage onClose={closeModal} errorMessageText={errorMessageText} />}
 
