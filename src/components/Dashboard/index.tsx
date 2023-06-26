@@ -1,84 +1,73 @@
-<<<<<<< Updated upstream
-import React from 'react';
-import Table from './table';
-import Chart from './chart';
-=======
 import React, { useState } from 'react';
 import ChartData from './chart';
 import './Dashboard.css';
 
->>>>>>> Stashed changes
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, ArcElement, Tooltip, Legend } from 'chart.js';
 
+ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement, Tooltip, Legend);
 
-ChartJS.register(
-  BarElement,
-  Tooltip,
-  Legend,
-  CategoryScale,
-  LinearScale,
-  ArcElement
-)
+const PieChartBoard: React.FC = () => {
+  const [inputValues, setInputValues] = useState<number[]>([42, 240, 150, 420, 80, 320, 96]); // Initial input values for the chart
+  const labels = ['Communication', 'Electrical', 'Energy', 'Manufacturing', 'Medical', 'Agriculture', 'Construction']; // Labels for each input
 
-const DataPage: React.FC = () => {
-  const tableData = React.useMemo(
-    () => [
-      { name: 'João', age: 25 },
-      { name: 'Maria', age: 30 },
-      { name: 'Pedro', age: 35 },
-    ],
-    []
-  );
-
-  const tableColumns = React.useMemo(
-    () => [
-      { Header: 'Name', accessor: 'name' },
-      { Header: 'Age', accessor: 'age' },
-    ],
-    []
-  );
-
-  const barChartData = React.useMemo(
-    () => ({
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-      datasets: [
-        {
-          label: 'Sales',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: 'rgba(75, 192, 192, 0.6)',
-        },
-      ],
-    }),
-    []
-  );
+  const handleChange = (index: number, value: number) => {
+    const updatedValues = [...inputValues];
+    updatedValues[index] = value;
+    setInputValues(updatedValues);
+  };
 
   const pieChartData = React.useMemo(
     () => ({
-      labels: ['Red', 'Blue', 'Yellow'],
+      labels: labels,
       datasets: [
         {
-          label: 'Pie Chart Example',
-          data: [10, 20, 30],
-          backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.6)'],
+          label: 'Values',
+          data: inputValues,
+          backgroundColor: ['rgb(279, 0, 0)', 'rgb(128, 191, 255)', 'rgb(179, 255, 179)', 'rgb(255, 125, 185)', 'rgb(190, 190, 220)', 'rgb(204, 255, 255)', 'rgb(255, 255, 0)'],
         },
       ],
     }),
-    []
+    [inputValues, labels]
   );
-  
 
   return (
-    <div>
-      <h1>Bar Table Example</h1>
-      <Table data={tableData} columns={tableColumns} />
-      <h1>Chart Example</h1>
-      <Chart data={barChartData} />
-      <h1>Table Example</h1>
-      <Table data={tableData} columns={tableColumns} />
-      <h1>Pie Chart Example</h1>
-      <Chart data={pieChartData} />
-    </div>
+    <section>
+      <div className="row">
+        <div className="col">
+          <h2 className="title">Amount Spent on Market Research per Industry Category</h2>
+          <h5 className="info">*in millions U$</h5>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-lg-5">
+          <div className="data-container d-flex flex-wrap">
+            {inputValues.map((value, index) => (
+              <div key={index} className="input-container">
+                <label htmlFor={`input-${index}`} className="input-label">
+                  {labels[index]}
+                </label>
+                <input
+                  className="chart-data"
+                  id={`input-${index}`}
+                  type="number"
+                  value={value}
+                  onChange={(e) => handleChange(index, parseInt(e.target.value))}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="col-lg-7 d-flex flex-column align-items-center pie-chart">
+          <ChartData data={pieChartData} />
+        </div>
+      </div>
+      <div className="col-lg-12 d-flex flex-column align-items-center">
+        <button onClick={() => window.location.href = '/'} className='button'>
+          Logout
+        </button>
+      </div>
+    </section>
   );
 };
 
-export default DataPage;
+export default PieChartBoard;

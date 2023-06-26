@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream:src/components/Botao/Botao.css
-.botao {
-=======
 .standard-button {
->>>>>>> Stashed changes:src/components/Button/Button.css
     background-color: #6278f7;
     border-radius: 10px;
     font-weight: 700;
@@ -15,21 +11,13 @@
     width: 100%;
 }
 
-<<<<<<< Updated upstream:src/components/Botao/Botao.css
-.botao:hover {
-=======
 .standard-button:hover {
->>>>>>> Stashed changes:src/components/Button/Button.css
     font-weight: bolder;
     background-color: #5139eb;
 }
 
 @media (max-width: 600px) {
-<<<<<<< Updated upstream:src/components/Botao/Botao.css
-    .botao {
-=======
     .standard-button {
->>>>>>> Stashed changes:src/components/Button/Button.css
         margin: 10% 0;
         /* Define um tamanho máximo de 3% da largura da viewport */
     }
