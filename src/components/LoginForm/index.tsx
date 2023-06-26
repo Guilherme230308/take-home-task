@@ -70,9 +70,7 @@ const LoginForm = () => {
           placeholder="Insert your password"
           onChange={handlePasswordChange}
         />
-        <Botao>
-          Login
-        </Botao>
+        <Botao>Login</Botao>
 
         {showModal && <ErrorMessage onClose={closeModal} errorMessageText={errorMessageText} />}
 
