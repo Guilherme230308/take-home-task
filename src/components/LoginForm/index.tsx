@@ -72,9 +72,7 @@ const LoginForm = () => {
           onChange={handlePasswordChange}
           isPassword={true}
         />
-        <Button>
-          Login
-        </Button>
+        <Button>Login</Button>
 
         {showModal && <ErrorMessage onClose={closeModal} errorMessageText={errorMessageText} />}
 

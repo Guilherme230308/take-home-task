@@ -7,7 +7,7 @@ interface buttonProps {
 
 const Button: React.FC<buttonProps> = (props) => {
   return (
-    <button className='login-button'>{props.children}</button>
+    <button className='standard-button'>{props.children}</button>
   );
 }
 
