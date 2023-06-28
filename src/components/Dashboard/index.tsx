@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import ChartData from './chart';
 import './Dashboard.css';
 
@@ -8,7 +8,6 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement, Tooltip, Le
 
 const PieChartBoard: React.FC = () => {
   const [inputValues, setInputValues] = useState<number[]>([42, 240, 150, 420, 80, 320, 96]); // Initial input values for the chart
-  const labels = ['Communication', 'Electrical', 'Energy', 'Manufacturing', 'Medical', 'Agriculture', 'Construction']; // Labels for each input
 
   const handleChange = (index: number, value: number) => {
     const updatedValues = [...inputValues];
@@ -16,7 +15,12 @@ const PieChartBoard: React.FC = () => {
     setInputValues(updatedValues);
   };
 
-  const pieChartData = React.useMemo(
+  const labels = useMemo(
+    () => ['Communication', 'Electrical', 'Energy', 'Manufacturing', 'Medical', 'Agriculture', 'Construction'], // Labels for each input
+    []
+  );
+
+  const pieChartData = useMemo(
     () => ({
       labels: labels,
       datasets: [
