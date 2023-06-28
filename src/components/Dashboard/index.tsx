@@ -1,7 +1,4 @@
 import React, { useMemo, useState } from 'react'
-=======
-import React, { useState } from 'react';
->>>>>>> Stashed changes
 import ChartData from './chart';
 import './Dashboard.css';
 
