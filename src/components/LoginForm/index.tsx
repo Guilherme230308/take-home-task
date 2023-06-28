@@ -34,7 +34,7 @@ const LoginForm = () => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    // Validation logic
+    
     if (username.trim() === '') {
       setErrorMessageText('Username cannot be empty.');
       openModal();
